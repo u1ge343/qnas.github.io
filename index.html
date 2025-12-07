@@ -2,45 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My AR Visiting Card</title>
+  <title>My AR 3D Avatar Card</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Basic SEO / preview -->
-  <meta name="description" content="Interactive AR visiting card profile." />
+  <meta name="description" content="Interactive AR visiting card with 3D avatar." />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- model-viewer for 3D avatar -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <!-- Camera background -->
   <video id="camera" autoplay playsinline muted></video>
 
-  <!-- Dark overlay so text is readable -->
+  <!-- Dark overlay -->
   <div class="overlay"></div>
 
-  <!-- Floating profile card -->
+  <!-- Main 3D + details card -->
   <div id="card">
-    <div class="avatar-circle">
-      <!-- Optional profile image -->
-      <!-- replace with your own image URL or remove background-image in CSS -->
-    </div>
-    <h1 class="name">Your Name</h1>
-    <p class="title">Your Role / Founder, QNAS</p>
+    <div class="card-inner">
+      <!-- LEFT: 3D Avatar -->
+      <div class="avatar-3d-wrap">
+        <model-viewer
+          src="https://models.readyplayer.me/69356ace14ff70500078c52a.glb"
+          alt="3D avatar"
+          autoplay
+          auto-rotate
+          camera-controls
+          exposure="1.1"
+          shadow-intensity="0.6"
+          disable-zoom
+        ></model-viewer>
+      </div>
 
-    <p class="tagline">
-      Short one-line about you or your startup. Keep it punchy.
-    </p>
+      <!-- RIGHT: Text details -->
+      <div class="details">
+        <h1 class="name">Your Name</h1>
+        <p class="title">Founder, QNAS</p>
 
-    <div class="links">
-      <!-- Replace # with your real links -->
-      <a href="mailto:youremail@example.com" target="_blank">Email</a>
-      <a href="https://www.linkedin.com/in/your-id" target="_blank">LinkedIn</a>
-      <a href="https://your-website.com" target="_blank">Website</a>
+        <p class="tagline">
+          One punchy line about who you are / what QNAS does.
+        </p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <span class="label">Email</span>
+            <a href="mailto:youremail@example.com" target="_blank">
+              youremail@example.com
+            </a>
+          </div>
+
+          <div class="info-item">
+            <span class="label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/your-id" target="_blank">
+              linkedin.com/in/your-id
+            </a>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Website</span>
+            <a href="https://your-website.com" target="_blank">
+              your-website.com
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Small message at bottom -->
+  <!-- Bottom hint -->
   <div class="hint">
-    Move your phone slightly – the card will react ✨
+    Move your phone a bit – the 3D avatar and card will tilt like AR ✨
   </div>
 
   <script src="script.js"></script>
