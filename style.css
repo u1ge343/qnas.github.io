@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+}
+
+/* Camera video full screen */
+#camera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark gradient overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0, 0, 0, 0.1), #000);
+  z-index: -1;
+}
+
+/* Profile card */
+#card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(90vw, 360px);
+  padding: 20px 22px 18px;
+  border-radius: 22px;
+  background: rgba(15, 15, 20, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7);
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  text-align: center;
+  transition: transform 0.15s ease-out;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* TODO: replace with your photo url or remove this line */
+  background-image: url("https://via.placeholder.com/150");
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.links a:active {
+  transform: scale(0.97);
+}
+
+.hint {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
