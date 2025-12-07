@@ -1,4 +1,4 @@
-// Start camera
+// Start camera as background
 async function startCamera() {
   const video = document.getElementById("camera");
 
@@ -32,22 +32,25 @@ function applyTilt(xPercent, yPercent) {
     `translate(-50%, -50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 }
 
-// Mouse move (for desktop / laptops)
+// Mouse move (desktop)
 window.addEventListener("mousemove", (e) => {
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
   applyTilt(x, y);
 });
 
-// Device motion (for mobile)
+// Device motion (mobile)
 if (window.DeviceOrientationEvent) {
   window.addEventListener("deviceorientation", (event) => {
     const gamma = event.gamma || 0; // left-right
-    const beta = event.beta || 0; // front-back
+    const beta = event.beta || 0;   // front-back
 
-    const x = (gamma + 45) / 90; // normalize roughly from -45 to 45
-    const y = (beta - 30) / 60; // normalize roughly around portrait
+    const x = (gamma + 45) / 90; // normalize roughly -45..45
+    const y = (beta - 30) / 60;  // normalize around portrait
 
-    applyTilt(Math.min(Math.max(x, 0), 1), Math.min(Math.max(y, 0), 1));
+    const xClamped = Math.min(Math.max(x, 0), 1);
+    const yClamped = Math.min(Math.max(y, 0), 1);
+
+    applyTilt(xClamped, yClamped);
   });
 }
