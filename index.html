@@ -2,127 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Marker AR Business Card</title>
+    <title>QNAS AR Business Card</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Marker-based AR visiting card with 3D avatar and details." />
+    <meta
+      name="description"
+      content="Marker-based AR visiting card with 3D avatar and QNAS contact details."
+    />
 
-    <!-- A-Frame -->
+    <!-- A-Frame core -->
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
-    <!-- AR.js (A-Frame version) -->
+    <!-- AR.js for A-Frame (marker-based AR) -->
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 
     <style>
       body {
         margin: 0;
         overflow: hidden;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-      }
-
-      /* Simple loading message */
-      #loading {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(0, 0, 0, 0.6);
-        color: #fff;
-        font-size: 0.8rem;
       }
     </style>
   </head>
 
   <body>
-    <div id="loading">Point your camera at the Hiro marker to see the AR card ✨</div>
-
-    <!-- AR.js scene -->
     <a-scene
       embedded
       vr-mode-ui="enabled: false"
       renderer="logarithmicDepthBuffer: true; antialias: true"
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- Marker: using built-in Hiro marker -->
-      <!-- You'll print this marker and put it on/near your visiting card -->
+      <!-- Marker: built-in Hiro marker -->
+      <!-- Print a standard Hiro marker and place it on/near your card -->
       <a-marker preset="hiro">
-        <!-- 3D Avatar -->
+        <!-- 3D Avatar, centered on the marker and facing forward -->
         <a-entity
           gltf-model="url(https://models.readyplayer.me/69356ace14ff70500078c52a.glb)"
-          position="-0.3 0 0"
-          rotation="0 90 0"
+          position="0 0 0"
+          rotation="0 0 0"
           scale="0.45 0.45 0.45"
         >
         </a-entity>
 
-        <!-- Details card (3D panel) -->
-        <a-entity position="0.6 0 0">
-          <!-- Background panel -->
+        <!-- Info panel on the right side of the avatar -->
+        <a-entity position="0.8 0 0">
+          <!-- Background card -->
           <a-plane
-            position="0 0.2 0"
-            width="0.9"
-            height="0.6"
-            color="#111122"
+            position="0 0.18 0"
+            width="1.2"
+            height="0.75"
+            color="#101020"
             opacity="0.9"
             material="side: double;"
-            radius="0.05"
           ></a-plane>
 
-          <!-- Name -->
+          <!-- QNAS logo at the top of the panel -->
+          <a-image
+            src="assets/qnas.png"
+            position="0 0.44 0.02"
+            width="0.6"
+            height="0.22"
+          ></a-image>
+
+          <!-- Style constants for text:
+               - Roboto MSDF font for clean, professional look
+               - Slightly smaller width so lines don’t stretch too far -->
+          <!-- Role -->
           <a-text
-            value="Your Name"
+            value="Founder / CEO"
             color="#FFFFFF"
-            position="-0.38 0.42 0.01"
-            width="1.4"
-            wrap-count="16"
+            position="-0.55 0.24 0.02"
+            width="2.0"
+            wrap-count="28"
+            shader="msdf"
+            font="https://cdn.aframe.io/fonts/Roboto-msdf.json"
           ></a-text>
 
-          <!-- Title -->
+          <!-- Phone -->
           <a-text
-            value="Founder, QNAS"
-            color="#CCCCFF"
-            position="-0.38 0.30 0.01"
-            width="1.4"
-            wrap-count="24"
-          ></a-text>
-
-          <!-- Tagline -->
-          <a-text
-            value="One punchy line about QNAS or what you do."
-            color="#EEEEFF"
-            position="-0.38 0.15 0.01"
-            width="1.4"
-            wrap-count="24"
+            value="📞  +91 72005 59313"
+            color="#FFFFFF"
+            position="-0.55 0.09 0.02"
+            width="2.0"
+            wrap-count="28"
+            shader="msdf"
+            font="https://cdn.aframe.io/fonts/Roboto-msdf.json"
           ></a-text>
 
           <!-- Email -->
           <a-text
-            value="Email: youremail@example.com"
+            value="✉  moh@nsd.com"
             color="#FFFFFF"
-            position="-0.38 -0.02 0.01"
-            width="1.4"
+            position="-0.55 -0.06 0.02"
+            width="2.0"
             wrap-count="28"
-          ></a-text>
-
-          <!-- LinkedIn -->
-          <a-text
-            value="LinkedIn: linkedin.com/in/your-id"
-            color="#FFFFFF"
-            position="-0.38 -0.16 0.01"
-            width="1.4"
-            wrap-count="28"
+            shader="msdf"
+            font="https://cdn.aframe.io/fonts/Roboto-msdf.json"
           ></a-text>
 
           <!-- Website -->
           <a-text
-            value="Website: your-website.com"
+            value="🌐  qnas.in"
             color="#FFFFFF"
-            position="-0.38 -0.30 0.01"
-            width="1.4"
+            position="-0.55 -0.21 0.02"
+            width="2.0"
             wrap-count="28"
+            shader="msdf"
+            font="https://cdn.aframe.io/fonts/Roboto-msdf.json"
           ></a-text>
         </a-entity>
       </a-marker>
@@ -130,13 +114,5 @@
       <!-- Camera -->
       <a-entity camera></a-entity>
     </a-scene>
-
-    <script>
-      // Hide loading text after a few seconds
-      setTimeout(() => {
-        const loading = document.getElementById("loading");
-        if (loading) loading.style.display = "none";
-      }, 7000);
-    </script>
   </body>
 </html>
