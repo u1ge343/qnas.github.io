@@ -1,0 +1,283 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.0.5eb040c7)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 23544,
+            "type": "VEC3",
+            "max": [
+                5.648799896240234,
+                7.642099857330322,
+                3.27239990234375
+            ],
+            "min": [
+                -5.36299991607666,
+                -6.713600158691406,
+                0.6424000263214111
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 23544,
+            "type": "VEC3",
+            "max": [
+                0.999359130859375,
+                0.9989230036735535,
+                0.9999977350234985
+            ],
+            "min": [
+                -0.9997227787971497,
+                -0.9999258518218994,
+                -0.9999949932098389
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 23544,
+            "type": "VEC2",
+            "max": [
+                0.9638000130653381,
+                0.9628999829292297
+            ],
+            "min": [
+                0.02759999968111515,
+                0.024100005626678468
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 138912,
+            "type": "SCALAR",
+            "max": [
+                23543
+            ],
+            "min": [
+                0
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 20594,
+            "type": "VEC3",
+            "max": [
+                6.435699939727783,
+                6.62339973449707,
+                1.3179999589920045
+            ],
+            "min": [
+                -6.567999839782715,
+                -6.380300045013428,
+                0.004999999888241291
+            ]
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 20594,
+            "type": "VEC3",
+            "max": [
+                0.9964525103569031,
+                0.996376097202301,
+                1.0
+            ],
+            "min": [
+                -0.9964520335197449,
+                -0.9963929653167725,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 20594,
+            "type": "VEC2",
+            "max": [
+                0.9021000266075134,
+                0.9761000275611877
+            ],
+            "min": [
+                0.01510000042617321,
+                0.037699997425079349
+            ]
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 122688,
+            "type": "SCALAR",
+            "max": [
+                20593
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 2458816,
+            "uri": "result.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 282528,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 282528,
+            "byteLength": 282528,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 565056,
+            "byteLength": 188352,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 753408,
+            "byteLength": 555648,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1309056,
+            "byteLength": 247128,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1556184,
+            "byteLength": 247128,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1803312,
+            "byteLength": 164752,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1968064,
+            "byteLength": 490752,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "DefaultMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        },
+        {
+            "name": "13917_Pepperoni",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        },
+        {
+            "name": "plate",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "13917_Pepperoni_v2",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 1,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "plate",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 2,
+                    "indices": 7,
+                    "attributes": {
+                        "POSITION": 4,
+                        "NORMAL": 5,
+                        "TEXCOORD_0": 6
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "input.obj",
+            "children": [
+                1,
+                2
+            ]
+        },
+        {
+            "name": "13917_Pepperoni_v2",
+            "mesh": 0
+        },
+        {
+            "name": "plate",
+            "mesh": 1
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
